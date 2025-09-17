@@ -1,4 +1,4 @@
-# 🥗 **Projet : EatSmart**
+# **Projet : EatSmart**
 
 **Étudiant :** Pierre
 
@@ -48,3 +48,7 @@ L’application se divise en deux parties :
 - **Base de données :** MySQL
 
 ---
+
+### **5. Schéma de l'architecture Eatsmart**
+
+![Schéma de l'architecture](assets/img/schema.png)
