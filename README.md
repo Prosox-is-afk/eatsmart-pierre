@@ -52,3 +52,15 @@ L’application se divise en deux parties :
 ### **5. Schéma de l'architecture Eatsmart**
 
 ![Schéma de l'architecture](assets/img/schema.png)
+
+### **6. Schéma du Modèle Conceptuel de Données (MCD)**
+
+![Schéma du MCD](assets/img/mcd.png)
+
+### **7. Schéma du Modèle Logique de Données (MLD)**
+
+![Schéma du MLD](assets/img/mld.png)
+
+### **8. Schéma du Modèle Physique de Données (MPD)**
+
+![Schéma du MPD](assets/img/mpd.png)
