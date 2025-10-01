@@ -65,7 +65,7 @@ L’application se divise en deux parties :
 
 ![Schéma du MPD](assets/img/mpd.png)
 
-### **9. Endpoints de l'API
+### **9. Endpoints de l'API**
 
 Adresse de l'API (en local) : http://localhost/pierreburnier/pierre-api-eatsmart
 
