@@ -64,3 +64,12 @@ L’application se divise en deux parties :
 ### **8. Schéma du Modèle Physique de Données (MPD)**
 
 ![Schéma du MPD](assets/img/mpd.png)
+
+### **9. Endpoints de l'API
+
+Adresse de l'API (en local) : http://localhost/pierreburnier/pierre-api-eatsmart
+
+Voici les différents endpoints de l'API : 
+- `GET /articles` → Afficher la liste des articles
+- `GET /categories` → Afficher la liste des catégories
+- `GET /commandes` → Afficher la liste des commandes
