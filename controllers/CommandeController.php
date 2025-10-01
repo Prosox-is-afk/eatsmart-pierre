@@ -1,6 +1,6 @@
 <?php
 
-require_once "../models/CommandeModel.php";
+require_once "models/CommandeModel.php";
 
 class CommandeController
 /**
@@ -25,5 +25,5 @@ class CommandeController
         echo json_encode($commandes);
     }
 }
-$commandeController = new CommandeController();
-$commandeController->getAllCommandes();
+// $commandeController = new CommandeController();
+// $commandeController->getAllCommandes();

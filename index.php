@@ -1,5 +1,13 @@
 <?php
 
+require_once "controllers/ArticleController.php";
+require_once "controllers/CommandeController.php";
+require_once "controllers/CategorieController.php";
+
+$articleController = new ArticleController();
+$commandeController = new CommandeController();
+$categorieController = new CategorieController();
+
 // Vérifie si le paramètre "page" est vide ou non présent dans l'URL
 if (empty($_GET["page"])) {
     // Si le paramètre est vide, on affiche un message d'erreur
@@ -21,7 +29,7 @@ if (empty($_GET["page"])) {
                 echo "Afficher les informations du article : ". $url[1];
             } else {
                 // Sinon, on affiche tous les articles
-                echo "Afficher les informations des articles";
+                $articleController->getAllArticles();
             }
             break;
             
@@ -32,7 +40,7 @@ if (empty($_GET["page"])) {
                 echo "Afficher les informations du commandes : ". $url[1];
             } else {
                 // Sinon, on affiche tous les commandess
-                echo "Afficher les informations des commandes";
+                $commandeController->getAllCommandes();
             }
             break;
 
@@ -43,7 +51,7 @@ if (empty($_GET["page"])) {
                 echo "Afficher les informations du categorie : ". $url[1];
             } else {
                 // Sinon, on affiche tous les categories
-                echo "Afficher les informations des categories";
+                $categorieController->getAllCategories();
             }
             break;
 

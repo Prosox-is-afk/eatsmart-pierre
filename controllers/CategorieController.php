@@ -1,6 +1,6 @@
 <?php
 
-require_once "../models/CategorieModel.php";
+require_once "models/CategorieModel.php";
 
 class CategorieController
 /**
@@ -25,5 +25,5 @@ class CategorieController
         echo json_encode($categories);
     }
 }
-$categorieController = new CategorieController();
-$categorieController->getAllCategories();
+// $categorieController = new CategorieController();
+// $categorieController->getAllCategories();

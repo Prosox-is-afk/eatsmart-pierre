@@ -1,6 +1,6 @@
 <?php
 
-require_once "../models/ArticleModel.php";
+require_once "models/ArticleModel.php";
 
 class ArticleController
 /**
@@ -25,5 +25,5 @@ class ArticleController
         echo json_encode($articles);
     }
 }
-$articleController = new ArticleController();
-$articleController->getAllArticles();
+// $articleController = new ArticleController();
+// $articleController->getAllArticles();
