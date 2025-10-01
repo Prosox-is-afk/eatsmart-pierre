@@ -28,5 +28,5 @@ class ArticleModel
     }
 }
 
-$article = new ArticleModel();
-print_r($article->getDBAllArticles());
+// $article = new ArticleModel();
+// print_r($article->getDBAllArticles());

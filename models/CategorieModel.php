@@ -28,5 +28,5 @@ class CategorieModel
     }
 }
 
-$categorie = new CategorieModel();
-print_r($categorie->getDBAllCategories());
+// $categorie = new CategorieModel();
+// print_r($categorie->getDBAllCategories());

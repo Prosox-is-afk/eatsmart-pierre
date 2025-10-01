@@ -28,5 +28,5 @@ class CommandeModel
     }
 }
 
-$commande = new CommandeModel();
-print_r($commande->getDBAllCommandes());
+// $commande = new CommandeModel();
+// print_r($commande->getDBAllCommandes());
