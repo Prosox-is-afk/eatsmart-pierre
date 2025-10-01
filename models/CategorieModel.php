@@ -12,6 +12,11 @@ class CategorieModel
     private $pdo;
 
     public function __construct()
+        /**
+     * Constructeur de la classe CategorieModel.
+     * Initialise une connexion à la base de données en utilisant PDO.
+     * En cas d'échec, une erreur est affichée et le script s'arrête.
+    */
     {
         try {
             $this->pdo = new PDO("mysql:host=localhost;dbname=eatsmart_bdd_pierre;charset=utf8", "root", "");
@@ -22,6 +27,9 @@ class CategorieModel
     }
 
     public function getDBAllCategories()
+        /**
+    * Récupère toutes les catégories de la base de données.
+    */
     {
         $stmt = $this->pdo->query("SELECT * FROM categorie");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
