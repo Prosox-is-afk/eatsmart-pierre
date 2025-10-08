@@ -71,5 +71,11 @@ Adresse de l'API (en local) : http://localhost/pierreburnier/pierre-api-eatsmart
 
 Voici les différents endpoints de l'API : 
 - `GET /articles` → Afficher la liste des articles
+- `GET /articles/{id}` → Afficher l'article avec l'id égal à {id}
+- `GET /articles/{id}/commandes` → Afficher toutes les commandes contenant l’article {id}
 - `GET /categories` → Afficher la liste des catégories
+- `GET /categories/{id}` → Afficher la catégorie avec l'id égal à {id}
+- `GET /categories/{id}/articles` → Afficher tous les articles appartenant à la catégorie {id}
 - `GET /commandes` → Afficher la liste des commandes
+- `GET /commandes/{id}` → Afficher la commande avec l'id égal à {id}
+- `GET /commandes/{id}/articles` → Afficher le détail des articles de la commande {id}
