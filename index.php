@@ -24,13 +24,15 @@ if (empty($_GET["page"])) {
     switch($url[0]) {
         case "articles" : 
             // Si un second segment est présent (ex: un ID), on l’utilise
-            if (isset($url[2]) && $url[2] === "commandes" && isset($url[1])) {
-                // Exemple : /articles/3/commandes → affiche tous les commandes de l'article 3
-                $articleController->getAllCommandesByArticle($url[1]);
-            }
-            else if (isset($url[1])) {
-                // Exemple : /articles/3 → affiche les infos du article 3
-                $articleController->getArticleById($url[1]);
+            if (isset($url[1])) {
+                if (isset($url[2]) && $url[2] === "commandes" && isset($url[1])) {
+                    // Exemple : /articles/3/commandes → affiche tous les commandes de l'article 3
+                    $articleController->getAllCommandesByArticle($url[1]);
+                }
+                else {
+                    // Exemple : /articles/3 → affiche les infos du article 3
+                    $articleController->getArticleById($url[1]);
+                }
             } 
             else {
                 // Sinon, on affiche tous les articles
@@ -40,13 +42,15 @@ if (empty($_GET["page"])) {
             
         case "commandes" : 
             // Si un second segment est présent (ex: un ID), on l’utilise
-            if (isset($url[2]) && $url[2] === "articles" && isset($url[1])) {
-                // Exemple : /commandes/3/articles → affiche les details de la commandes 3
-                $commandeController->getArticlesByCommandes($url[1]);
-            }
-            else if (isset($url[1])) {
-                // Exemple : /commandes/3 → affiche les infos du commandes 3
-                $commandeController->getCommandeById($url[1]);
+            if (isset($url[1])) {
+                if (isset($url[2]) && $url[2] === "articles" && isset($url[1])) {
+                    // Exemple : /commandes/3/articles → affiche les details de la commandes 3
+                    $commandeController->getArticlesByCommandes($url[1]);
+                }
+                else {
+                    // Exemple : /commandes/3 → affiche les infos du commandes 3
+                    $commandeController->getCommandeById($url[1]);
+                }
             } 
             else {
                 // Sinon, on affiche tous les commandess
@@ -56,13 +60,16 @@ if (empty($_GET["page"])) {
 
         case "categories" : 
             // Si un second segment est présent (ex: un ID), on l’utilise
-            if (isset($url[2]) && $url[2] === "articles" && isset($url[1])) {
-                // Exemple : /categories/3/articles → affiche tous les articles de la categorie 3
-                $categorieController->getAllArticlesByCategorie($url[1]);
-            }
-            else if (isset($url[1])) {
-                // Exemple : /categories/3 → affiche les infos du categorie 3
-                $categorieController->getCategorieById($url[1]);
+
+            if (isset($url[1])) {
+                if (isset($url[2]) && $url[2] === "articles" && isset($url[1])) {
+                    // Exemple : /categories/3/articles → affiche tous les articles de la categorie 3
+                    $categorieController->getAllArticlesByCategorie($url[1]);
+                }
+                else {
+                    // Exemple : /categories/3 → affiche les infos du categorie 3
+                    $categorieController->getCategorieById($url[1]);
+                }
             } 
             else {
                 // Sinon, on affiche tous les categories
