@@ -27,12 +27,23 @@ class ArticleModel
     }
 
     public function getDBAllArticles()
-    /**
+    /*
     * Récupère tous les articles de la base de données.
     */
     {
         $stmt = $this->pdo->query("SELECT * FROM article");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getDBArticleById($id) 
+    /*
+    * Récupère l'article {id} de la base de données.
+    */
+    {
+        $sql = "SELECT * FROM article WHERE id_article = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
 
