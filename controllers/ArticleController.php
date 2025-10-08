@@ -30,6 +30,12 @@ class ArticleController
         $article = $this->model->getDBArticleById($id);
         echo json_encode($article);
     }
+
+    public function getAllCommandesByArticle($id)
+    {
+        $commandes = $this->model->getDBAllCommandesByArticle($id);
+        echo json_encode($commandes);
+    }
 }
 // $articleController = new ArticleController();
 // $articleController->getAllArticles();

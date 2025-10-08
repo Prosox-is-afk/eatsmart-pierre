@@ -24,10 +24,15 @@ if (empty($_GET["page"])) {
     switch($url[0]) {
         case "articles" : 
             // Si un second segment est présent (ex: un ID), on l’utilise
-            if (isset($url[1])) {
+            if (isset($url[2]) && $url[2] === "commandes" && isset($url[1])) {
+                // Exemple : /articles/3/commandes → affiche tous les commandes de l'article 3
+                $articleController->getAllCommandesByArticle($url[1]);
+            }
+            else if (isset($url[1])) {
                 // Exemple : /articles/3 → affiche les infos du article 3
                 $articleController->getArticleById($url[1]);
-            } else {
+            } 
+            else {
                 // Sinon, on affiche tous les articles
                 $articleController->getAllArticles();
             }

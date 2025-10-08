@@ -45,6 +45,21 @@ class ArticleModel
         $stmt->execute(['id' => $id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getDBAllCommandesByArticle($id)
+    /**
+     * Récupère toutes les commandes d'un article spécifique de la base de données.
+     */
+    {
+        $sql = "SELECT a.nom, ac.*, c.date_commande, c.prix_total, c.etat FROM assoc_article_commande ac 
+                INNER JOIN article a ON a.id_article = ac.id_article
+                INNER JOIN commande c ON c.id_commande = ac.id_commande
+                WHERE ac.id_article = :id"
+        ;
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 
 // $article = new ArticleModel();
