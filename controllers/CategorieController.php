@@ -24,6 +24,12 @@ class CategorieController
         $categories = $this->model->getDBAllCategories();
         echo json_encode($categories);
     }
+
+    public function getCategorieById($id)
+    {
+        $categorie = $this->model->getDBCategorieById($id);
+        echo json_encode($categorie);
+    }
 }
 // $categorieController = new CategorieController();
 // $categorieController->getAllCategories();

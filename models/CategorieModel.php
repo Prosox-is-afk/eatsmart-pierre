@@ -34,6 +34,17 @@ class CategorieModel
         $stmt = $this->pdo->query("SELECT * FROM categorie");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getDBCategorieById($id) 
+    /**
+    * Récupère la catégorie {id} de la base de données.
+    */
+    {
+        $sql = "SELECT * FROM categorie WHERE id_categorie = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
 
 // $categorie = new CategorieModel();
