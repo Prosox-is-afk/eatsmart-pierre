@@ -30,6 +30,12 @@ class CommandeController
         $commande = $this->model->getDBCommandeById($id);
         echo json_encode($commande);
     }
+
+    public function getArticlesByCommandes($id)
+    {
+        $details = $this->model->getDBArticlesByCommandes($id);
+        echo json_encode($details);
+    }
 }
 // $commandeController = new CommandeController();
 // $commandeController->getAllCommandes();

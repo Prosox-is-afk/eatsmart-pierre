@@ -45,6 +45,21 @@ class CommandeModel
         $stmt->execute(['id' => $id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getDBArticlesByCommandes($id)
+    /**
+     * Récupère les détails d'une commande spécifique de la base de données.
+     */
+    {
+        $sql = "SELECT ac.id_commande, ac.quantite_article, a.*
+                FROM assoc_article_commande ac
+                JOIN article a ON a.id_article=ac.id_article
+                WHERE ac.id_commande = :id"
+        ;
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 
 // $commande = new CommandeModel();

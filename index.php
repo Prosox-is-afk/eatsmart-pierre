@@ -40,10 +40,15 @@ if (empty($_GET["page"])) {
             
         case "commandes" : 
             // Si un second segment est présent (ex: un ID), on l’utilise
-            if (isset($url[1])) {
+            if (isset($url[2]) && $url[2] === "articles" && isset($url[1])) {
+                // Exemple : /commandes/3/articles → affiche les details de la commandes 3
+                $commandeController->getArticlesByCommandes($url[1]);
+            }
+            else if (isset($url[1])) {
                 // Exemple : /commandes/3 → affiche les infos du commandes 3
                 $commandeController->getCommandeById($url[1]);
-            } else {
+            } 
+            else {
                 // Sinon, on affiche tous les commandess
                 $commandeController->getAllCommandes();
             }
