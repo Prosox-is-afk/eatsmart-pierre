@@ -45,6 +45,17 @@ class CategorieModel
         $stmt->execute(['id' => $id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getDBAllArticlesByCategorie($id)
+    /**
+     * Récupère tous les articles d'une catégorie spécifique de la base de données.
+     */
+    {
+        $sql = "SELECT * FROM article WHERE id_categorie = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 
 // $categorie = new CategorieModel();
