@@ -37,7 +37,7 @@ if (empty($_GET["page"])) {
             // Si un second segment est présent (ex: un ID), on l’utilise
             if (isset($url[1])) {
                 // Exemple : /commandes/3 → affiche les infos du commandes 3
-                echo "Afficher les informations du commandes : ". $url[1];
+                $commandeController->getCommandeById($url[1]);
             } else {
                 // Sinon, on affiche tous les commandess
                 $commandeController->getAllCommandes();
