@@ -61,6 +61,18 @@ class CategorieController
             echo json_encode(["message" => "Erreur lors de la mise à jour de la categorie."]);
         }
     }
+
+    public function deleteCategorie($id) {
+        // Logique pour supprimer une categorie
+        $deleted = $this->model->deleteDBCategorie($id);
+        if ($deleted) {
+            http_response_code(200); // Categorie supprimée
+            echo json_encode(["message" => "Categorie supprimée avec succès."]);
+        } else {
+            http_response_code(404); // Categorie non trouvée
+            echo json_encode(["message" => "Categorie non trouvée."]);
+        }
+    }
 }
 // $categorieController = new CategorieController();
 // $categorieController->getAllCategories();

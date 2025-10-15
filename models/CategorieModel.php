@@ -83,6 +83,18 @@ class CategorieModel
 
         return $stmt->rowCount() > 0;
     }
+
+    public function deleteDBCategorie($id) {
+        /**
+         * Supprime une catégorie de la base de données.
+         */
+        $sql = "DELETE FROM categorie WHERE id_categorie = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->rowCount() > 0;
+    }
 }
 
 // $categorie = new CategorieModel();
