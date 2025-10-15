@@ -81,6 +81,7 @@ Voici les différents endpoints de l'API :
 - `GET /commandes/{id}/articles` → Afficher le détail des articles de la commande {id}
 
 - `POST /articles` → Créer un nouvel article
+- `POST /categories` → Créer une nouvelle catégorie
 
 - `DELETE /articles/{id}` → Supprimer un article {id}
 

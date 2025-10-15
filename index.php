@@ -64,42 +64,89 @@ if (empty($_GET["page"])) {
             }
             break;
             
-        case "commandes" : 
-            // Si un second segment est présent (ex: un ID), on l’utilise
-            if (isset($url[1])) {
-                if (isset($url[2]) && $url[2] === "articles" && isset($url[1])) {
-                    // Exemple : /commandes/3/articles → affiche les details de la commandes 3
-                    $commandeController->getArticlesByCommandes($url[1]);
-                }
-                else {
-                    // Exemple : /commandes/3 → affiche les infos du commandes 3
-                    $commandeController->getCommandeById($url[1]);
-                }
-            } 
-            else {
-                // Sinon, on affiche tous les commandess
-                $commandeController->getAllCommandes();
-            }
-            break;
-
         case "categories" : 
-            // Si un second segment est présent (ex: un ID), on l’utilise
+            switch ($method) {
 
-            if (isset($url[1])) {
-                if (isset($url[2]) && $url[2] === "articles" && isset($url[1])) {
-                    // Exemple : /categories/3/articles → affiche tous les articles de la categorie 3
-                    $categorieController->getAllArticlesByCategorie($url[1]);
-                }
-                else {
-                    // Exemple : /categories/3 → affiche les infos du categorie 3
-                    $categorieController->getCategorieById($url[1]);
-                }
-            } 
-            else {
-                // Sinon, on affiche tous les categories
-                $categorieController->getAllCategories();
+                // Gérer les requêtes GET pour les categories
+                case "GET":
+                    // Si un second segment est présent (ex: un ID), on l’utilise
+                    if (isset($url[1])) {
+                        if (isset($url[2]) && $url[2] === "articles" && isset($url[1])) {
+                            // Exemple : /categories/3/articles → affiche tous les articles de la categorie 3
+                            $categorieController->getAllArticlesByCategorie($url[1]);
+                        }
+                        else {
+                            // Exemple : /categories/3 → affiche les infos du categorie 3
+                            $categorieController->getCategorieById($url[1]);
+                        }
+                    } 
+                    else {
+                        // Sinon, on affiche tous les categories
+                        $categorieController->getAllCategories();
+                    }
+                    break;
+
+                // Gérer les requêtes POST pour les categories
+                case "POST":
+                    $data = json_decode(file_get_contents('php://input'), true);
+                    $categorieController->createCategorie($data);
+                    break;
+                    
+                // Gérer les requêtes PUT pour les categories
+                case "PUT":
+                    if (isset($url[1])) {
+                        $data = json_decode(file_get_contents('php://input'), true);
+                        $categorieController->updateCategorie($url[1], $data);
+                        echo json_encode($data);
+                    } else {
+                        echo "L'ID de la categorie est requis pour la mise à jour.";
+                    }
+                    break;
+
+                // Gérer les requêtes DELETE pour les categories
+                case "DELETE":
+                    if (isset($url[1])) {
+                        $categorieController->deleteCategorie($url[1]);
+                    } else {
+                        echo "L'ID de la categorie est requis pour la suppression.";
+                    }
+                    break;
             }
             break;
+        case "commandes" :
+            switch ($method) {
+                // Gérer les requêtes GET pour les commandes
+                case "GET":
+                    // Si un second segment est présent (ex: un ID), on l’utilise
+                    if (isset($url[1])) {
+                        if (isset($url[2]) && $url[2] === "articles" && isset($url[1])) {
+                            // Exemple : /commandes/3/articles → affiche les details de la commandes 3
+                            $commandeController->getArticlesByCommandes($url[1]);
+                        }
+                        else {
+                            // Exemple : /commandes/3 → affiche les infos du commandes 3
+                            $commandeController->getCommandeById($url[1]);
+                        }
+                    } 
+                    else {
+                        // Sinon, on affiche tous les commandess
+                        $commandeController->getAllCommandes();
+                    }
+                    break;
+                case "POST":
+                    // Gérer les requêtes POST pour les commandes
+                    $data = json_decode(file_get_contents('php://input'), true);
+                    $commandeController->createCommande($data);
+                    break;
+                case "PUT":
+                    // Gérer les requêtes PUT pour les commandes
+                    break;
+                case "DELETE":
+                    // Gérer les requêtes DELETE pour les commandes
+                    break;
+            }
+            break;
+
 
         // Si la ressource n'existe pas, on renvoie un message d’erreur
         default :

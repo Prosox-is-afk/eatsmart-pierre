@@ -36,6 +36,19 @@ class CategorieController
         $articles = $this->model->getDBAllArticlesByCategorie($id);
         echo json_encode($articles);
     }
+
+    public function createCategorie($data)
+    {
+        // Logique pour créer une nouvelle categorie
+        $newCategorie = $this->model->createDBCategorie($data);
+        if ($newCategorie) {
+            http_response_code(201); // Categorie crée
+            echo json_encode($newCategorie);
+        } else {
+            http_response_code(400); // Erreur requête
+            echo json_encode(["message" => "Erreur lors de la création de la categorie."]);
+        }
+    }
 }
 // $categorieController = new CategorieController();
 // $categorieController->getAllCategories();
