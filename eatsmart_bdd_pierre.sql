@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 01 oct. 2025 à 21:28
+-- Généré le : mer. 15 oct. 2025 à 23:38
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.18
 
@@ -78,7 +78,8 @@ INSERT INTO `article` (`id_article`, `nom`, `prix`, `description`, `id_categorie
 (31, 'Soda 1L+', 3.0000, 'coca, icetea, orangina, sprite, oasis', 5),
 (32, 'Biere', 3.5000, 'desperados, heineken', 5),
 (33, 'Vin AOP 25cl', 4.9000, 'rouge, rose', 5),
-(34, 'Vin AOP 50cl', 7.5000, 'rouge, rose', 5);
+(34, 'Vin AOP 50cl', 7.5000, 'rouge, rose', 5),
+(35, 'Anchois 1000000cm', 70.0000, 'sauce tomate premium, origan, huile d\'olive extra vierge, anchois, olive', 1);
 
 -- --------------------------------------------------------
 
@@ -104,6 +105,7 @@ INSERT INTO `assoc_article_commande` (`id_article`, `id_commande`, `quantite_art
 (1, 2, 1.00),
 (1, 3, 3.00),
 (1, 4, 2.00),
+(1, 6, 3.00),
 (3, 2, 1.00),
 (3, 4, 1.00),
 (5, 2, 1.00),
@@ -134,7 +136,8 @@ INSERT INTO `categorie` (`id_categorie`, `nom`) VALUES
 (2, 'tradition'),
 (3, 'creme'),
 (4, 'dessert maison'),
-(5, 'boisson');
+(5, 'boisson'),
+(6, 'teeeeeeeest');
 
 -- --------------------------------------------------------
 
@@ -160,7 +163,8 @@ INSERT INTO `commande` (`id_commande`, `date_commande`, `prix_total`, `etat`) VA
 (2, '2024-10-25 00:00:00', 23.2, 'en cours'),
 (3, '2024-10-25 00:00:00', 23.7, 'en cours'),
 (4, '2024-10-25 00:00:00', 34.2, 'en cours'),
-(5, '2024-10-25 00:00:00', 17.7, 'en cours');
+(5, '2024-10-25 00:00:00', 17.7, 'en cours'),
+(6, '2024-10-25 00:00:00', 23.2, 'en cours');
 
 --
 -- Contraintes pour les tables déchargées

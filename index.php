@@ -91,7 +91,7 @@ if (empty($_GET["page"])) {
                     $data = json_decode(file_get_contents('php://input'), true);
                     $categorieController->createCategorie($data);
                     break;
-                    
+
                 // Gérer les requêtes PUT pour les categories
                 case "PUT":
                     if (isset($url[1])) {
@@ -136,7 +136,7 @@ if (empty($_GET["page"])) {
                 case "POST":
                     // Gérer les requêtes POST pour les commandes
                     $data = json_decode(file_get_contents('php://input'), true);
-                    $commandeController->createCommande($data);
+                    $commandeController->createCommandes($data);
                     break;
                 case "PUT":
                     // Gérer les requêtes PUT pour les commandes

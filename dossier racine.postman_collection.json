@@ -1,0 +1,699 @@
+{
+	"info": {
+		"_postman_id": "da9ad267-97c0-4861-8d92-f0a5a762b8e6",
+		"name": "dossier racine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48519141",
+		"_collection_link": "https://prosox-6001162.postman.co/workspace/eatsmart-pierre~b20b565a-90da-485f-9634-d3aa7fb0800b/collection/48519141-da9ad267-97c0-4861-8d92-f0a5a762b8e6?action=share&source=collection_link&creator=48519141"
+	},
+	"item": [
+		{
+			"name": "articles",
+			"item": []
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "getAllCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pierreburnier",
+								"pierre-api-eatsmart",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAllCategories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pierreburnier",
+										"pierre-api-eatsmart",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 15 Oct 2025 20:41:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.59 (Win64) PHP/8.2.18 mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Content-Length",
+									"value": "183"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_categorie\": 1,\n        \"nom\": \"classic\"\n    },\n    {\n        \"id_categorie\": 2,\n        \"nom\": \"tradition\"\n    },\n    {\n        \"id_categorie\": 3,\n        \"nom\": \"creme\"\n    },\n    {\n        \"id_categorie\": 4,\n        \"nom\": \"dessert maison\"\n    },\n    {\n        \"id_categorie\": 5,\n        \"nom\": \"boisson\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getAllArticlesByCategorie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/categories/1/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pierreburnier",
+								"pierre-api-eatsmart",
+								"categories",
+								"1",
+								"articles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAllArticlesByCategorie",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/categories/1/articles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pierreburnier",
+										"pierre-api-eatsmart",
+										"categories",
+										"1",
+										"articles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 15 Oct 2025 20:41:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.59 (Win64) PHP/8.2.18 mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1717"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_article\": 1,\n        \"nom\": \"Anchois 23cm\",\n        \"prix\": \"7.9000\",\n        \"description\": \"sauce tomate premium, origan, huile d'olive extra vierge, anchois, olive\",\n        \"id_categorie\": 1\n    },\n    {\n        \"id_article\": 2,\n        \"nom\": \"Anchois 33cm\",\n        \"prix\": \"11.9000\",\n        \"description\": \"sauce tomate premium, origan, huile d'olive extra vierge, anchois, olive\",\n        \"id_categorie\": 1\n    },\n    {\n        \"id_article\": 3,\n        \"nom\": \"Emmental 23cm\",\n        \"prix\": \"7.9000\",\n        \"description\": \"sauce tomate premium, origan, huile d'olive extra vierge, emmental, basilic, olive\",\n        \"id_categorie\": 1\n    },\n    {\n        \"id_article\": 4,\n        \"nom\": \"Emmental 33cm\",\n        \"prix\": \"11.9000\",\n        \"description\": \"sauce tomate premium, origan, huile d'olive extra vierge, emmental, basilic, olive\",\n        \"id_categorie\": 1\n    },\n    {\n        \"id_article\": 5,\n        \"nom\": \"Margherita 23cm\",\n        \"prix\": \"7.9000\",\n        \"description\": \"sauce tomate premium, origan, huile d'olive extra vierge, mozzarella\",\n        \"id_categorie\": 1\n    },\n    {\n        \"id_article\": 6,\n        \"nom\": \"Margherita 33cm\",\n        \"prix\": \"11.9000\",\n        \"description\": \"sauce tomate premium, origan, huile d'olive extra vierge, mozzarella\",\n        \"id_categorie\": 1\n    },\n    {\n        \"id_article\": 7,\n        \"nom\": \"3 fromages 23cm\",\n        \"prix\": \"8.4000\",\n        \"description\": \"sauce tomate premium, origan, huile d'olive extra vierge, mozzarella, emmental, chevre\",\n        \"id_categorie\": 1\n    },\n    {\n        \"id_article\": 8,\n        \"nom\": \"3 fromages 33cm\",\n        \"prix\": \"12.9000\",\n        \"description\": \"sauce tomate premium, origan, huile d'olive extra vierge, mozzarella, emmental, chevre\",\n        \"id_categorie\": 1\n    },\n    {\n        \"id_article\": 9,\n        \"nom\": \"4 fromages 23cm\",\n        \"prix\": \"8.9000\",\n        \"description\": \"sauce tomate premium, origan, huile d'olive extra vierge, mozzarella, emmental, chevre, roquefort\",\n        \"id_categorie\": 1\n    },\n    {\n        \"id_article\": 10,\n        \"nom\": \"4 fromages 33cm\",\n        \"prix\": \"13.9000\",\n        \"description\": \"sauce tomate premium, origan, huile d'olive extra vierge, mozzarella, emmental, chevre, roquefort\",\n        \"id_categorie\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getCategoriesById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/categories/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pierreburnier",
+								"pierre-api-eatsmart",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getCategoriesById",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/categories/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pierreburnier",
+										"pierre-api-eatsmart",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 15 Oct 2025 20:41:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.59 (Win64) PHP/8.2.18 mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_categorie\": 1,\n    \"nom\": \"classic\"\n}"
+						}
+					]
+				},
+				{
+					"name": "createCategorie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_categorie\": 6,\r\n    \"nom\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pierreburnier",
+								"pierre-api-eatsmart",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_categorie\": 6,\r\n    \"nom\": \"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pierreburnier",
+										"pierre-api-eatsmart",
+										"categories"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 15 Oct 2025 21:32:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.59 (Win64) PHP/8.2.18 mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_categorie\": 6,\n    \"nom\": \"test\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updateCategorie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_categorie\": 6,\r\n    \"nom\": \"teeeeeeeest\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/categories/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pierreburnier",
+								"pierre-api-eatsmart",
+								"categories",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_categorie\": 6,\r\n    \"nom\": \"teeeeeeeest\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/categories/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pierreburnier",
+										"pierre-api-eatsmart",
+										"categories",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 15 Oct 2025 21:46:56 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.59 (Win64) PHP/8.2.18 mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_categorie\": 6,\n    \"nom\": \"teeeeeeeest\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "commandes",
+			"item": [
+				{
+					"name": "getAllCommandes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/commandes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pierreburnier",
+								"pierre-api-eatsmart",
+								"commandes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAllCommandes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/commandes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pierreburnier",
+										"pierre-api-eatsmart",
+										"commandes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 15 Oct 2025 20:41:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.59 (Win64) PHP/8.2.18 mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Content-Length",
+									"value": "460"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_commande\": 1,\n        \"date_commande\": \"2024-10-25 00:00:00\",\n        \"prix_total\": 7.9,\n        \"etat\": \"en cours\"\n    },\n    {\n        \"id_commande\": 2,\n        \"date_commande\": \"2024-10-25 00:00:00\",\n        \"prix_total\": 23.2,\n        \"etat\": \"en cours\"\n    },\n    {\n        \"id_commande\": 3,\n        \"date_commande\": \"2024-10-25 00:00:00\",\n        \"prix_total\": 23.7,\n        \"etat\": \"en cours\"\n    },\n    {\n        \"id_commande\": 4,\n        \"date_commande\": \"2024-10-25 00:00:00\",\n        \"prix_total\": 34.2,\n        \"etat\": \"en cours\"\n    },\n    {\n        \"id_commande\": 5,\n        \"date_commande\": \"2024-10-25 00:00:00\",\n        \"prix_total\": 17.7,\n        \"etat\": \"en cours\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getCommandeById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/commandes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pierreburnier",
+								"pierre-api-eatsmart",
+								"commandes",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getCommandeById",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/commandes/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pierreburnier",
+										"pierre-api-eatsmart",
+										"commandes",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 15 Oct 2025 20:41:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.59 (Win64) PHP/8.2.18 mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=99"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_commande\": 1,\n    \"date_commande\": \"2024-10-25 00:00:00\",\n    \"prix_total\": 7.9,\n    \"etat\": \"en cours\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getArticlesByCommandes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/commandes/4/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pierreburnier",
+								"pierre-api-eatsmart",
+								"commandes",
+								"4",
+								"articles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getArticlesByCommandes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/commandes/4/articles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pierreburnier",
+										"pierre-api-eatsmart",
+										"commandes",
+										"4",
+										"articles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 15 Oct 2025 20:42:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.59 (Win64) PHP/8.2.18 mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Content-Length",
+									"value": "617"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_commande\": 4,\n        \"quantite_article\": \"2.00\",\n        \"id_article\": 1,\n        \"nom\": \"Anchois 23cm\",\n        \"prix\": \"7.9000\",\n        \"description\": \"sauce tomate premium, origan, huile d'olive extra vierge, anchois, olive\",\n        \"id_categorie\": 1\n    },\n    {\n        \"id_commande\": 4,\n        \"quantite_article\": \"1.00\",\n        \"id_article\": 3,\n        \"nom\": \"Emmental 23cm\",\n        \"prix\": \"7.9000\",\n        \"description\": \"sauce tomate premium, origan, huile d'olive extra vierge, emmental, basilic, olive\",\n        \"id_categorie\": 1\n    },\n    {\n        \"id_commande\": 4,\n        \"quantite_article\": \"2.00\",\n        \"id_article\": 5,\n        \"nom\": \"Margherita 23cm\",\n        \"prix\": \"7.9000\",\n        \"description\": \"sauce tomate premium, origan, huile d'olive extra vierge, mozzarella\",\n        \"id_categorie\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "createCommande",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id_commande\": 10,\r\n  \"date_commande\": \"2024-10-25 00:00:00\",\r\n  \"prix_total\": 10,\r\n  \"etat\": \"en cours\",\r\n  \"articles\": [\r\n    {\r\n      \"id_article\": 1,\r\n      \"quantite\": 10\r\n    },\r\n    {\r\n      \"id_article\": 2,\r\n      \"quantite\": 5\r\n    },\r\n    {\r\n      \"id_article\": 3,\r\n      \"quantite\": 2\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/pierreburnier/pierre-api-eatsmart/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pierreburnier",
+								"pierre-api-eatsmart",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

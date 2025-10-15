@@ -36,6 +36,18 @@ class CommandeController
         $details = $this->model->getDBArticlesByCommandes($id);
         echo json_encode($details);
     }
+
+    public function createCommandes($data) {
+        // Logique pour créer une nouvelle commande
+        $newCommande = $this->model->createDBCommandes($data);
+        if ($newCommande) {
+            http_response_code(201); // Commande crée
+            echo json_encode($newCommande);
+        } else {
+            http_response_code(400); // Erreur requête
+            echo json_encode(["message" => "Erreur lors de la création de la commande."]);
+        }
+    }
 }
 // $commandeController = new CommandeController();
 // $commandeController->getAllCommandes();

@@ -60,6 +60,24 @@ class CommandeModel
         $stmt->execute(['id' => $id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function createDBCommandes($data) {
+        /*** Crée une nouvelle commande dans la base de données.*/
+        $sql = "INSERT INTO commande (id_commande, date_commande, prix_total, etat) VALUES (:id_commande, :date_commande, :prix_total, :etat)";
+        "INSERT INTO assoc_article_commande (id_article, id_commande, quantite_article) VALUES (:id_article, :id_commande, :quantite_article)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id_commande', $data['id_commande'], PDO::PARAM_INT);
+        $stmt->bindParam(':date_commande', $data['date_commande'], PDO::PARAM_STR);
+        $stmt->bindParam(':prix_total', $data['prix_total'], PDO::PARAM_STR);
+        $stmt->bindParam(':etat', $data['etat'], PDO::PARAM_STR);
+        $stmt->bindParam(':id_article', $data['id_article'], PDO::PARAM_INT);
+        $stmt->bindParam(':quantite_article', $data['quantite_article'], PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        return $this->getDBCommandeById($data['id_commande']);
+    }
+
 }
 
 // $commande = new CommandeModel();
