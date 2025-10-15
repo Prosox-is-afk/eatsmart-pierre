@@ -49,6 +49,18 @@ class CategorieController
             echo json_encode(["message" => "Erreur lors de la création de la categorie."]);
         }
     }
+
+    public function updateCategorie($id, $data)
+    {
+        // Logique pour mettre à jour une categorie
+        $updatedCategorie = $this->model->updateDBCategorie($id, $data);
+        if ($updatedCategorie) {
+            http_response_code(200); // Categorie mise à jour
+        } else {
+            http_response_code(400); // Erreur requête
+            echo json_encode(["message" => "Erreur lors de la mise à jour de la categorie."]);
+        }
+    }
 }
 // $categorieController = new CategorieController();
 // $categorieController->getAllCategories();

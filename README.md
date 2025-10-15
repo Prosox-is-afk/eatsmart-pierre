@@ -86,3 +86,4 @@ Voici les différents endpoints de l'API :
 - `DELETE /articles/{id}` → Supprimer un article {id}
 
 - `PUT /articles/{id}` → Modifier un article avec son id
+- `PUT /categories/{id}` → Modifier une catégorie avec son id

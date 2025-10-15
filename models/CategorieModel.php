@@ -69,6 +69,20 @@ class CategorieModel
 
         return $this->getDBCategorieById($data['id_categorie']);
     }
+
+    public function updateDBCategorie($id, $data) {
+        /**
+         * Met à jour une catégorie existante dans la base de données.
+         */
+        $sql = "UPDATE categorie SET id_categorie = :id_categorie, nom = :nom WHERE id_categorie = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id_categorie', $data['id_categorie'], PDO::PARAM_INT);
+        $stmt->bindParam(':nom', $data['nom'], PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->rowCount() > 0;
+    }
 }
 
 // $categorie = new CategorieModel();
