@@ -49,6 +49,19 @@ class ArticleController
             echo json_encode(["message" => "Erreur lors de la création de l'article."]);
         }
     }
+
+    public function deleteArticle($id)
+    {
+        // Logique pour supprimer un article
+        $deleted = $this->model->deleteDBArticle($id);
+        if ($deleted) {
+            http_response_code(200); // Article supprimé
+            echo json_encode(["message" => "Article supprimé avec succès."]);
+        } else {
+            http_response_code(404); // Article non trouvé
+            echo json_encode(["message" => "Article non trouvé."]);
+        }
+    }
 }
 // $articleController = new ArticleController();
 // $articleController->getAllArticles();
