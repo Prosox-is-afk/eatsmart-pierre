@@ -83,3 +83,5 @@ Voici les différents endpoints de l'API :
 - `POST /articles` → Créer un nouvel article
 
 - `DELETE /articles/{id}` → Supprimer un article {id}
+
+- `PUT /articles/{id}` → Modifier un article avec son id

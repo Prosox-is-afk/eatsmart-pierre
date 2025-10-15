@@ -80,7 +80,22 @@ class ArticleModel
         $sql = "DELETE FROM article WHERE id_article = :id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->execute(['id' => $id]);
+        $stmt->execute();
+
+        return $stmt->rowCount() > 0;
+    }
+
+    public function updateDBArticle($id, $data)
+    {
+        $sql = "UPDATE article SET id_article = :id_article, nom = :nom, prix = :prix, description = :description, id_categorie = :id_categorie WHERE id_article = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id_article', $data['id_article'], PDO::PARAM_INT);
+        $stmt->bindParam(':nom', $data['nom'], PDO::PARAM_STR);
+        $stmt->bindParam(':prix', $data['prix'], PDO::PARAM_INT);
+        $stmt->bindParam(':description', $data['description'], PDO::PARAM_STR);
+        $stmt->bindParam(':id_categorie', $data['id_categorie'], PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
 
         return $stmt->rowCount() > 0;
     }

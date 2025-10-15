@@ -62,6 +62,18 @@ class ArticleController
             echo json_encode(["message" => "Article non trouvé."]);
         }
     }
+
+    public function updateArticle($id, $data)
+    {
+        // Logique pour mettre à jour un article
+        $updated = $this->model->updateDBArticle($id, $data);
+        if ($updated) {
+            http_response_code(200); // Article mis à jour
+        } else {
+            http_response_code(400); // Erreur requête
+            echo json_encode(["message" => "Erreur lors de la mise à jour de l'article."]);
+        }
+    }
 }
 // $articleController = new ArticleController();
 // $articleController->getAllArticles();

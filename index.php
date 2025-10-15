@@ -47,7 +47,9 @@ if (empty($_GET["page"])) {
                     break;
                 case "PUT":
                     if (isset($url[1])) {
-                        $articleController->updateArticle($url[1]);
+                        $data = json_decode(file_get_contents('php://input'), true);
+                        $articleController->updateArticle($url[1], $data);
+                        echo json_encode($data);
                     } else {
                         echo "L'ID de l'article est requis pour la mise à jour.";
                     }
