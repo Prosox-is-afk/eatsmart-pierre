@@ -60,6 +60,20 @@ class ArticleModel
         $stmt->execute(['id' => $id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function createDBArticle($data)
+    {
+        $sql = "INSERT INTO article (id_article, nom, prix, description , id_categorie) VALUES (:id_article, :nom, :prix, :description, :id_categorie)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id_article', $data['id_article'], PDO::PARAM_INT);
+        $stmt->bindParam(':nom', $data['nom'], PDO::PARAM_STR);
+        $stmt->bindParam(':prix', $data['prix'], PDO::PARAM_INT);
+        $stmt->bindParam(':description', $data['description'], PDO::PARAM_STR);
+        $stmt->bindParam(':id_categorie', $data['id_categorie'], PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $this->getDBArticleById($data['id_article']);
+    }
 }
 
 // $article = new ArticleModel();

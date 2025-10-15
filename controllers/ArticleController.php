@@ -36,6 +36,19 @@ class ArticleController
         $commandes = $this->model->getDBAllCommandesByArticle($id);
         echo json_encode($commandes);
     }
+
+    public function createArticle($data)
+    {
+        // Logique pour créer un nouvel article
+        $newArticle = $this->model->createDBArticle($data);
+        if ($newArticle) {
+            http_response_code(201); // Article crée
+            echo json_encode($newArticle);
+        } else {
+            http_response_code(400); // Erreur requête
+            echo json_encode(["message" => "Erreur lors de la création de l'article."]);
+        }
+    }
 }
 // $articleController = new ArticleController();
 // $articleController->getAllArticles();

@@ -79,3 +79,5 @@ Voici les différents endpoints de l'API :
 - `GET /commandes` → Afficher la liste des commandes
 - `GET /commandes/{id}` → Afficher la commande avec l'id égal à {id}
 - `GET /commandes/{id}/articles` → Afficher le détail des articles de la commande {id}
+
+- `POST /articles` → Créer un nouvel article
